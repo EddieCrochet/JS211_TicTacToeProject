@@ -41,9 +41,6 @@ const updateBoard = (id) => {
   console.log(`you clicked the sq at ${row} and ${column}`)
   board[row][column] = currentMarker;
   console.log(board)
-
-  // @TODO, Your code here: use the above information to change the board variable(array of arrays)
-  // HINT: in your browser open up the dev tools -> console
   
 }
 
@@ -59,15 +56,47 @@ const checkForWin = () => {
 }
 
 const horizontalWin = () => {
-  // @TODO, Your code here: to check for horizontal wins
+  if ((board[0][0] == currentMarker && 
+    board[0][1] == currentMarker && 
+    board[0][2] == currentMarker) ||
+    (board[1][0] == currentMarker && 
+      board[1][1] == currentMarker && 
+      board[1][2] == currentMarker) ||
+    (board[2][0] == currentMarker && 
+      board[2][1] == currentMarker && 
+      board[2][2] == currentMarker))  {
+    return true;
+}
+return false;
 }
 
 const verticalWin = () => {
-  // @TODO, Your code here: to check for vertical wins
+  if ((board[0][0] == currentMarker && 
+    board[1][0] == currentMarker && 
+    board[2][0] == currentMarker) ||
+    (board[0][1] == currentMarker && 
+    board[1][1] == currentMarker && 
+    board[2][1] == currentMarker) ||
+    (board[0][2] == currentMarker && 
+    board[1][2] == currentMarker && 
+    board[2][2] == currentMarker))  {
+    return true;
+}
+
+return false;
 }
 
 const diagonalWin = () => {
-  // @TODO, Your code here: to check for diagonal wins
+  if ((board[0][0] == currentMarker && 
+    board[1][1] == currentMarker && 
+    board[2][2] == currentMarker) ||
+    (board[0][2] == currentMarker && 
+    board[1][1] == currentMarker && 
+    board[2][0] == currentMarker))  {
+    return true;
+}
+
+return false;
 }
 
 const changeMarker = () => {
