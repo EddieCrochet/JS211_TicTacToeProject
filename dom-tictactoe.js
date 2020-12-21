@@ -37,6 +37,14 @@ const updateBoard = (id) => {
   
 }
 
+//function to reset the wins on the board
+const resetWins = () => {
+  let x = document.getElementById("xScore");
+  let o = document.getElementById("oScore");
+  x.innerHTML = "0";
+  o.innerHTML = "0";
+}
+
 const checkForWin = () => {
   // calls each checkForWin possibility and if any are true gives a page alert,
   if(horizontalWin() || verticalWin() || diagonalWin()) {
@@ -124,6 +132,5 @@ const resetBoard = () => {
 
 // **BONUSES**
 
-// 1. Count number of wins for each player and display them
-// 2. Reset the number of wins
-// 3. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
+// 1. Reset the number of wins
+// 2. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
