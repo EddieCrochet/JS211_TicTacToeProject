@@ -52,6 +52,8 @@ const ticTacToe = (row, column) => {
   //place mark if not already a mark there
   if(board[row][column] = ' ') {
     board[row][column] = playerTurn;
+    //ternary operator to switch between players
+    playerTurn = playerTurn === "X" ? "O" : "X"
   }
   // then check for a win
 }
