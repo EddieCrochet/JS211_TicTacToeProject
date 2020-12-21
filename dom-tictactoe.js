@@ -40,6 +40,10 @@ const updateBoard = (id) => {
 const checkForWin = () => {
   // calls each checkForWin possibility and if any are true gives a page alert,
   if(horizontalWin() || verticalWin() || diagonalWin()) {
+    let playerScoreDOM = document.getElementById(`${currentMarker.toLowerCase()}Score`);
+    let playerScore = parseInt(playerScoreDOM.innerHTML)+1;
+    console.log(playerScore, playerScoreDOM)
+    playerScoreDOM.innerHTML = playerScore;
     window.alert(`Player ${currentMarker} won!`);
     resetBoard();
   } else {
