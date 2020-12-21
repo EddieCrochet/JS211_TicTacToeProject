@@ -14,10 +14,17 @@
         <p>Get ready to play!</p>
         <!-- uses the built-in onclick attribute to call the resetBoard function -->
         <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Restart</button>
+        <form id="playersNames">
+          <caption>Set names of players here: </caption><br>
+          <label for="pOne">Player One: </label>
+          <input type="text" id="pOne">
+          <label for="pTwo">Player Two: </label>
+          <input type="text" id="pTwo">
+        </form>
         <p>It is <b><span id="playersTurn"></span></b>'s turn!</p>
         <div id="score">
-          <h3>X: <span id="xScore">0</span></h3>
-          <h3>O: <span id="oScore">0</span></h3>
+          <h3><span id="playerOne"></span>: <span id="xScore">0</span></h3>
+          <h3><span id="playerTwo"></span>: <span id="oScore">0</span></h3>
           <button onclick="resetWins()" type="button" class="btn btn-primary btn-lg">Reset Wins</button>
         </div>
       </div>

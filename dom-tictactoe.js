@@ -1,12 +1,27 @@
 
 let currentMarker = 'X'
+let winner;
 let board = [
   ['','',''],
   ['','',''],
   ['','','']
 ];
-//display whos turn it is
-document.getElementById("playersTurn").innerHTML = currentMarker;
+
+const handleNames = () => {
+  //display whos turn it is
+  let pTurn = document.getElementById("playersTurn");
+  let pOne = document.getElementById("pOne");
+  let pTwo = document.getElementById("pTwo");
+  let playOne = document.getElementById("playerOne");
+  let playTwo = document.getElementById("playerTwo");
+  if(currentMarker == "X") {
+    pTurn.innerHTML = pOne.value;
+    playOne.innerHTML = pOne.value;
+  } else if (currentMarker == "O") {
+    pTurn.innerHTML = pTwo.value;
+    playTwo.innerHTML = pTwo.value;
+  }
+}
 
 // is called when a square is clicked. "this" = element here
 const handleClick = (element) => {
@@ -52,13 +67,19 @@ const checkForWin = () => {
     let playerScore = parseInt(playerScoreDOM.innerHTML)+1;
     console.log(playerScore, playerScoreDOM)
     playerScoreDOM.innerHTML = playerScore;
-    window.alert(`Player ${currentMarker} won!`);
+    if(currentMarker === "X") {
+      winner=pOne.value;
+    } else if (currentMarker === "O") {
+      winner=pTwo.value;
+    }
+    window.alert(`Neat. ${winner} won.`);
     resetBoard();
   } else {
+    handleNames();
     // if no win, change the marker from X to O, or O to X for the next player.
     changeMarker();
     //change whos turn it is
-    document.getElementById("playersTurn").innerHTML = currentMarker;
+    //document.getElementById("playersTurn").innerHTML = currentMarker;
   }
 }
 
@@ -130,7 +151,4 @@ const resetBoard = () => {
   ];
 }
 
-// **BONUSES**
-
-// 1. Reset the number of wins
-// 2. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
+//Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
