@@ -17,9 +17,9 @@
         <form id="playersNames">
           <caption>Set names of players here: </caption><br>
           <label for="pOne">Player One: </label>
-          <input type="text" id="pOne">
+          <input onchange="handleNames()" type="text" id="pOne">
           <label for="pTwo">Player Two: </label>
-          <input type="text" id="pTwo">
+          <input onchange="handleNames()" type="text" id="pTwo">
         </form>
         <p>It is <b><span id="playersTurn"></span></b>'s turn!</p>
         <div id="score">

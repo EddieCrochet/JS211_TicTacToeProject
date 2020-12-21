@@ -14,12 +14,12 @@ const handleNames = () => {
   let pTwo = document.getElementById("pTwo");
   let playOne = document.getElementById("playerOne");
   let playTwo = document.getElementById("playerTwo");
+  playOne.innerHTML = pOne.value;
+  playTwo.innerHTML = pTwo.value;
   if(currentMarker == "X") {
     pTurn.innerHTML = pOne.value;
-    playOne.innerHTML = pOne.value;
   } else if (currentMarker == "O") {
     pTurn.innerHTML = pTwo.value;
-    playTwo.innerHTML = pTwo.value;
   }
 }
 
