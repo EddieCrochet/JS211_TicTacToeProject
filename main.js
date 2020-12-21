@@ -49,7 +49,10 @@ const checkForWin = () => {
 }
 
 const ticTacToe = (row, column) => {
-  // Your code here to place a marker on the board
+  //place mark if not already a mark there
+  if(board[row][column] = ' ') {
+    board[row][column] = playerTurn;
+  }
   // then check for a win
 }
 
