@@ -77,7 +77,7 @@ return false;
 }
 
 const checkForWin = () => {
-  if(horizontalWin() || verticalWin() ||  diagonalWin()) {
+  if(horizontalWin || verticalWin ||  diagonalWin) {
     return true;
   }
   return false;
@@ -87,8 +87,9 @@ const ticTacToe = (row, column) => {
   //place mark if not already a mark there
   if(board[row][column] = ' ') {
     board[row][column] = playerTurn;
+    checkForWin();
     //ternary operator to switch between players
-    playerTurn = playerTurn === "X" ? "O" : "X"
+    playerTurn = playerTurn === "X" ? "O" : "X";
   }
   checkForWin();
 }
