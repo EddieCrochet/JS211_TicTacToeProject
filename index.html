@@ -6,8 +6,6 @@
     <!--bootstrap & style links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="tictactoe.css">
-    <!-- link to JavaScript code -->
-    <script src="dom-tictactoe.js"></script>
   </head>
   <body>
     <div class="container">
@@ -16,6 +14,7 @@
         <p>Get ready to play!</p>
         <!-- uses the built-in onclick attribute to call the resetBoard function -->
         <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Restart</button>
+        <p>It is <span id="playersTurn"></span>'s turn!</p>
       </div>
 
       <table align="center">
@@ -38,5 +37,7 @@
         </tr>
       </table>
     </div>
+    <!-- link to JavaScript code -->
+    <script src="dom-tictactoe.js"></script>
   </body>
 </html>

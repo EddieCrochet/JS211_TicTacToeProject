@@ -5,6 +5,8 @@ let board = [
   ['','',''],
   ['','','']
 ];
+//display whos turn it is
+document.getElementById("playersTurn").innerHTML = currentMarker;
 
 // is called when a square is clicked. "this" = element here
 const handleClick = (element) => {
@@ -42,7 +44,9 @@ const checkForWin = () => {
     resetBoard();
   } else {
     // if no win, change the marker from X to O, or O to X for the next player.
-    changeMarker()
+    changeMarker();
+    //change whos turn it is
+    document.getElementById("playersTurn").innerHTML = currentMarker;
   }
 }
 
@@ -116,7 +120,6 @@ const resetBoard = () => {
 
 // **BONUSES**
 
-// 1. Display the current player's turn
-// 2. Count number of wins for each player and display them
-// 3. Reset the number of wins
-// 4. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
+// 1. Count number of wins for each player and display them
+// 2. Reset the number of wins
+// 3. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
