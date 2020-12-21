@@ -1,12 +1,3 @@
-//       ***********************
-//            INSTRUCTIONS
-//       ***********************
-
-// 1. Read the code below and figure out the data flow
-// 2. Add in your code from the terminal app (check for win logic)
-// 3. Look for the @TODO, to fix
-// next to each @TODO you will find tasks that need to be finished
-// 4. GET THIS GAME WORKING!!
 
 let currentMarker = 'X'
 let board = [
@@ -47,8 +38,8 @@ const updateBoard = (id) => {
 const checkForWin = () => {
   // calls each checkForWin possibility and if any are true gives a page alert,
   if(horizontalWin() || verticalWin() || diagonalWin()) {
-    // **BONUS** you could make the dismissal of this alert window reset the board...
-    window.alert(`Player ${currentMarker} won!`)
+    window.alert(`Player ${currentMarker} won!`);
+    resetBoard();
   } else {
     // if no win, change the marker from X to O, or O to X for the next player.
     changeMarker()
@@ -128,5 +119,4 @@ const resetBoard = () => {
 // 1. Display the current player's turn
 // 2. Count number of wins for each player and display them
 // 3. Reset the number of wins
-// 4. Clear the board on alert window dismissal
-// 5. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
+// 4. Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
