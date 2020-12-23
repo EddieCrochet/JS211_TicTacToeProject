@@ -16,16 +16,17 @@ const handleNames = () => {
   let playTwo = document.getElementById("playerTwo");
   playOne.innerHTML = pOne.value;
   playTwo.innerHTML = pTwo.value;
-  if(currentMarker === "X") {
+  if(currentMarker == "X") {
     pTurn.innerHTML = pOne.value;
-  } else if (currentMarker === "O") {
+    winner=pOne.value;
+  } else if (currentMarker == "O") {
     pTurn.innerHTML = pTwo.value;
+    winner=pTwo.value;
   }
 }
 
 // is called when a square is clicked. "this" = element here
 const handleClick = (element) => {
-  console.log(currentMarker)
   // check to see if the square clicked has anything in it, if not continue
   // this prevents an X being changed to an O
   if(!document.getElementById(element.id).innerHTML){
@@ -36,7 +37,6 @@ const handleClick = (element) => {
 }
 
 const addMarker = (id) => {
-  console.log(`We'll place a mark on square: ${id}`)
   //targets the element that was clicked and sets innerhtml to val of cur marker
   document.getElementById(id).innerHTML = currentMarker;
 }
@@ -46,11 +46,7 @@ const updateBoard = (id) => {
   // parses the id string into a number then captures the first and last part the newly create number as row & column
   const row = parseInt(id.charAt(0))
   const column = parseInt(id.charAt(2)) 
-
-  console.log(`you clicked the sq at ${row} and ${column}`)
   board[row][column] = currentMarker;
-  console.log(board)
-  
 }
 
 //function to reset the wins on the board
@@ -66,20 +62,14 @@ const checkForWin = () => {
   if(horizontalWin() || verticalWin() || diagonalWin()) {
     let playerScoreDOM = document.getElementById(`${currentMarker.toLowerCase()}Score`);
     let playerScore = parseInt(playerScoreDOM.innerHTML)+1;
-    console.log(playerScore, playerScoreDOM)
     playerScoreDOM.innerHTML = playerScore;
-    if(currentMarker === "X") {
-      winner=pOne.value;
-    } else if (currentMarker === "O") {
-      winner=pTwo.value;
-    }
     window.alert(`Neat. ${winner} won.`);
     resetBoard();
   } else {
-    handleNames();
     // if no win, change the marker from X to O, or O to X for the next player.
     changeMarker();
     //change whos turn it is
+    handleNames();
     //document.getElementById("playersTurn").innerHTML = currentMarker;
   }
 }
@@ -134,15 +124,11 @@ const changeMarker = () => {
 }
 
 const resetBoard = () => {
-  // sanity check: this tells us the function is being called
-  console.log("the board was cleared!")
-
   // collects all of the "td"s into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
   const squares = document.getElementsByTagName("TD")
   
   // loops over the HTML Collections and clears out the Xs and Os
   for (i=0; i<squares.length; i++) {
-    console.log(squares[i])
     squares[i].innerHTML = null
   }
   board = [
@@ -151,5 +137,3 @@ const resetBoard = () => {
     ['','','']
   ];
 }
-
-//Add players names and display who wins, i.e. "Congrats Emily, you won with 0s!"
