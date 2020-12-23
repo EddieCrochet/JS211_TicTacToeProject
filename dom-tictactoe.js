@@ -16,15 +16,16 @@ const handleNames = () => {
   let playTwo = document.getElementById("playerTwo");
   playOne.innerHTML = pOne.value;
   playTwo.innerHTML = pTwo.value;
-  if(currentMarker == "X") {
+  if(currentMarker === "X") {
     pTurn.innerHTML = pOne.value;
-  } else if (currentMarker == "O") {
+  } else if (currentMarker === "O") {
     pTurn.innerHTML = pTwo.value;
   }
 }
 
 // is called when a square is clicked. "this" = element here
 const handleClick = (element) => {
+  console.log(currentMarker)
   // check to see if the square clicked has anything in it, if not continue
   // this prevents an X being changed to an O
   if(!document.getElementById(element.id).innerHTML){
