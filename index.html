@@ -17,37 +17,39 @@
         <form id="playersNames">
           <caption>Set names of players here: </caption><br>
           <label for="pOne">Player One (<b>X's</b>): </label>
-          <input onchange="handleNames()" type="text" id="pOne">
+          <input onchange="handleNames()" type="text" id="pOne" size="2">
           <label for="pTwo">Player Two (<b>O's</b>): </label>
-          <input onchange="handleNames()" type="text" id="pTwo">
+          <input onchange="handleNames()" type="text" id="pTwo" size="2">
         </form>
-        <p>It is <b><span id="playersTurn"></span></b>'s turn!</p>
-        <div id="score">
+        <div id="scores">
           <h3><span id="playerOne"></span>: <span id="xScore">0</span></h3>
           <h3><span id="playerTwo"></span>: <span id="oScore">0</span></h3>
-          <button onclick="resetWins()" type="button" class="btn btn-primary btn-lg">Reset Wins</button>
         </div>
+        <button onclick="resetWins()" type="button" class="btn btn-primary btn-lg">Reset Wins</button>
       </div>
 
-      <table align="center">
-        <tr>
-          <!-- Each table-data (td) has an id that matches it's position in the array or arrays [0][1] -->
-          <td id='0-0' onclick="handleClick(this)" ></td>
-          <td id='0-1' onclick="handleClick(this)" ></td>
-          <td id='0-2' onclick="handleClick(this)" ></td>
-        </tr>
-        <tr>
-          <!-- onclick calls a function called handleClick and passes itself to it("this") -->
-          <td id='1-0' onclick="handleClick(this)" ></td>
-          <td id='1-1' onclick="handleClick(this)" ></td>
-          <td id='1-2' onclick="handleClick(this)" ></td>
-        </tr>
-        <tr>
-          <td id='2-0' onclick="handleClick(this)" ></td>
-          <td id='2-1' onclick="handleClick(this)" ></td>
-          <td id='2-2' onclick="handleClick(this)" ></td>
-        </tr>
-      </table>
+      <main>
+        <p>It is <b><span id="playersTurn"></span></b>'s turn!</p>
+        <table class="board" align="center">
+          <tr>
+            <!-- Each table-data (td) has an id that matches it's position in the array or arrays [0][1] -->
+            <td id='0-0' onclick="handleClick(this)" ></td>
+            <td id='0-1' onclick="handleClick(this)" ></td>
+            <td id='0-2' onclick="handleClick(this)" ></td>
+          </tr>
+          <tr>
+            <!-- onclick calls a function called handleClick and passes itself to it("this") -->
+            <td id='1-0' onclick="handleClick(this)" ></td>
+            <td id='1-1' onclick="handleClick(this)" ></td>
+            <td id='1-2' onclick="handleClick(this)" ></td>
+          </tr>
+          <tr>
+            <td id='2-0' onclick="handleClick(this)" ></td>
+            <td id='2-1' onclick="handleClick(this)" ></td>
+            <td id='2-2' onclick="handleClick(this)" ></td>
+          </tr>
+        </table>
+      </main>
     </div>
     <!-- link to JavaScript code -->
     <script src="dom-tictactoe.js"></script>

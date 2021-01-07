@@ -1,6 +1,14 @@
 body {
-  padding: 10px;
   font-family: 'Brush Script MT', cursive;
+}
+main {
+  text-align: center;
+}
+
+.container {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .jumbotron {
@@ -20,4 +28,17 @@ td{
   text-align: center;
   border: 5px solid black;
   font-size: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    display: block;
+  }
+  .jumbotron {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    padding:10px;
+  }
 }
