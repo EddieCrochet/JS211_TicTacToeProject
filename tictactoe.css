@@ -3,10 +3,10 @@ body, html {
 }
 
 body {
-  padding:10px;
   font-family: 'Brush Script MT', cursive;
   background: linear-gradient(#CC7F99, black);
   background-repeat: no-repeat;
+  padding-top: 15px;
 }
 main {
   text-align: center;
@@ -30,12 +30,21 @@ main {
   flex-direction: column;
 }
 
+.trn {
+  width: 60%;
+  margin: 0 auto;
+} 
+
 td{
   height:150px;
   width:150px;
   text-align: center;
-  border: 5px solid black;
+  border: 1px solid black;
   font-size: 100px;
+}
+
+.bckgrnd {
+  background-color: rgba(204, 204, 204, .4);
 }
 
 @media screen and (max-width: 1000px) {
