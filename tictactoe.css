@@ -1,3 +1,19 @@
+body {
+  padding: 10px;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#playersNames {
+  display:flex;
+  flex-direction: column;
+}
+
 td{
   height:150px;
   width:150px;
