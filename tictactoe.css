@@ -6,6 +6,8 @@ body {
   font-family: 'Brush Script MT', cursive;
   background: linear-gradient(#CC7F99, black);
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   padding-top: 15px;
 }
 main {
@@ -16,13 +18,13 @@ main {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  margin-bottom: 20px;
 }
 
 .jumbotron {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(204, 204, 204, .6);
 }
 
 #playersNames {
