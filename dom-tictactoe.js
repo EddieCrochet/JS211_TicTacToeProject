@@ -14,6 +14,8 @@ const handleNames = () => {
   let pTwo = document.getElementById("pTwo");
   let playOne = document.getElementById("playerOne");
   let playTwo = document.getElementById("playerTwo");
+  let yet = document.getElementById("yet");
+  yet.classList.add("hidden");
   playOne.innerHTML = pOne.value;
   playTwo.innerHTML = pTwo.value;
   if(currentMarker == "X") {
@@ -125,7 +127,7 @@ const changeMarker = () => {
 
 const resetBoard = () => {
   // collects all of the "td"s into an HTML Collection: https://www.w3schools.com/jsref/dom_obj_htmlcollection.asp  
-  const squares = document.getElementsByTagName("TD")
+  const squares = document.getElementsByTagName("TD");
   
   // loops over the HTML Collections and clears out the Xs and Os
   for (i=0; i<squares.length; i++) {
